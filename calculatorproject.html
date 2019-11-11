@@ -114,65 +114,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <script>
-        var operand1 = '';
-        var operand2 = '';
-        var isOperand1empty = true;
-
-        var operator = '';
-
-        function typeNumber(number) {
-            if (isOperand1empty) {
-                operand1 = operand1 + number;
-            } else {
-                operand2 = operand2 + number;
-            }
-
-            document.getElementById('display').innerText = document.getElementById('display').innerText + number;
-        }
-
-        function typeOperator(operator_value) {
-            operator = operator_value;
-            isOperand1empty = false;
-            operand1 = document.getElementById('display').innerText;
-            document.getElementById('display').innerText = document.getElementById('display').innerText + operator_value;
-
-        }
-
-        function typeEqual() {
-            operand1 = parseFloat(operand1);
-            operand2 = parseFloat(operand2);
-            var result = 0;
-
-            switch (operator) {
-                case '+':
-                    result = operand1 + operand2;
-                    break;
-                case '-':
-                    result = operand1 - operand2;
-                    break;
-                case '*':
-                    result = operand1 * operand2;
-                    break;
-                case '/':
-                    result = operand1 / operand2;
-                    break;
-            }
-
-            if (operator == '+') {
-                result = operand1 + operand2;
-
-            } else {
-                if (operator == '-') {
-
-                    result = operand1 - operand2;
-                }
-            }
-            operand1 = result;
-            operand2 = '';
-            console.log(result);
-            document.getElementById('display').innerText = result;
-        }
+    <script src="calculator.js">
     </script>
 
 </body>
